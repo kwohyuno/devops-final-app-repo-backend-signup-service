@@ -31,5 +31,5 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           IMAGE_URI=${{ secrets.AWS_ECR_URL }}/backend-signup:latest
-          docker build -t $IMAGE_URI .
+          docker build -t $IMAGE_URI -f ./Dockerfile .
           docker push $IMAGE_URI
