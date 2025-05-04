@@ -30,6 +30,6 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          IMAGE_URI=390638349876.dkr.ecr.us-east-1.amazonaws.com/devops/signup:latest
+          IMAGE_URI=${{ secrets.AWS_ECR_URL }}:latest
           docker build -t $IMAGE_URI -f src/main/java/Dockerfile .
           docker push $IMAGE_URI
